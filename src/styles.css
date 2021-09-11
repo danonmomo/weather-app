@@ -1,7 +1,3 @@
-<<<<<<< Updated upstream
-#today-weather-icon {
-    width: 20%;
-=======
 .container {
    font-family: 'Balsamiq Sans', cursive;
 }
@@ -51,6 +47,5 @@ li {
 }
 #top-main-right-col {
     position: relative;
-    top: 15px;
->>>>>>> Stashed changes
+    top: 10px;
 }
