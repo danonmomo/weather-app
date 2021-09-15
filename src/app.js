@@ -30,8 +30,21 @@ windElement.innerHTML = response.data.wind.speed;
 dateElement.innerHTML = formatDate(response.data.dt*1000);
 iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
 iconElement.setAttribute("alt",response.data.weather[0].description);
+//console.log(response.data);
 }
 
+function search(city) {
 let apiKey = "26cc4e1e98bc3a9df038576aea64ceb0";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Jakarta&appid=${apiKey}&units=metric`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(displayTemperature);
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#input-city");
+    search(cityInputElement.value);
+
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
