@@ -51,11 +51,11 @@ function handleSubmit(event) {
 }
 
 
-function convertFahrenheightTemp(event) {
+function convertFahrenheitTemp(event) {
     event.preventDefault();
-    fahrenheightTemperature = (celsiusTemperature* 9) / 5  + 32;
+    fahrenheitTemperature = (celsiusTemperature* 9) / 5  + 32;
     let tempElement= document.querySelector("#main-temperature");
-    tempElement.innerHTML = Math.round(fahrenheightTemperature);
+    tempElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 function convertCelsiusTemp(event) {
@@ -69,8 +69,8 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let fahrenheight = document.querySelector("#fahrenheight-link");
-fahrenheight.addEventListener("click",convertFahrenheightTemp);
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click",convertFahrenheitTemp);
 
 let celsius = document.querySelector("#celsius-link");
 celsius.addEventListener("click",convertCelsiusTemp);
