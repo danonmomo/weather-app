@@ -13,6 +13,8 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+
+
 function displayTemperature (response) {
 //console.log(response.data.main.temp);
 let tempElement = document.querySelector("#main-temperature");
@@ -22,7 +24,10 @@ let humidityElement = document.querySelector("#humidity");
 let windElement = document.querySelector("#wind");
 let dateElement = document.querySelector("#date");
 let iconElement = document.querySelector("#today-weather-icon");
-tempElement.innerHTML = Math.round(response.data.main.temp);
+
+celsiusTemperature = response.data.main.temp;
+
+tempElement.innerHTML = Math.round(celsiusTemperature);
 cityElement.innerHTML = response.data.name;
 descriptionElement.innerHTML = response.data.weather[0].description;
 humidityElement.innerHTML = response.data.main.humidity;
@@ -43,8 +48,31 @@ function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#input-city");
     search(cityInputElement.value);
-
 }
+
+
+function convertFahrenheightTemp(event) {
+    event.preventDefault();
+    fahrenheightTemperature = (celsiusTemperature* 9) / 5  + 32;
+    let tempElement= document.querySelector("#main-temperature");
+    tempElement.innerHTML = Math.round(fahrenheightTemperature);
+}
+
+function convertCelsiusTemp(event) {
+    event.preventDefault();
+   let tempElement= document.querySelector("#main-temperature");
+   tempElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheight = document.querySelector("#fahrenheight-link");
+fahrenheight.addEventListener("click",convertFahrenheightTemp);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click",convertCelsiusTemp);
+
+search("Tokyo");
