@@ -56,12 +56,16 @@ function convertFahrenheitTemp(event) {
     fahrenheitTemperature = (celsiusTemperature* 9) / 5  + 32;
     let tempElement= document.querySelector("#main-temperature");
     tempElement.innerHTML = Math.round(fahrenheitTemperature);
+    celsiusLink.classList.remove("active");
+   fahrenheitLink.classList.add('active');
 }
 
 function convertCelsiusTemp(event) {
     event.preventDefault();
    let tempElement= document.querySelector("#main-temperature");
    tempElement.innerHTML = Math.round(celsiusTemperature);
+   celsiusLink.classList.add("active");
+   fahrenheitLink.classList.remove('active');
 }
 
 let celsiusTemperature = null;
@@ -69,10 +73,10 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let fahrenheit = document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click",convertFahrenheitTemp);
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click",convertFahrenheitTemp);
 
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click",convertCelsiusTemp);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click",convertCelsiusTemp);
 
 search("Tokyo");
