@@ -10,16 +10,23 @@ margin: 30px auto;
 .weather-app {
     padding: 20px;
     border: 1px solid;
-    border-color: #f75448;
+    border-color: #000;
+    opacity: 0.8;
     border-radius: 15px;
+    background: linear-gradient(76.5deg, rgb(129, 252, 255) 0.4%, rgb(255, 175, 207) 49.8%, rgb(255, 208, 153) 98.6%);
 }
 
 .col-6 {
     padding: 0;
 }
 
+#search-button {
+    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    border: 1px solid #a6c1ee ;
+}
 .weather-temperature .active {
     color: black;
+
     cursor: default;
     text-decoration: none;
 }
@@ -41,6 +48,7 @@ li {
 }
 #today-weather-icon {
     width: 30%;
+    
 }
 
 #main-temperature{
@@ -59,4 +67,11 @@ li {
 #top-main-right-col {
     position: relative;
     top: 10px;
+}
+
+.weather-forecast {
+    text-align: center;
+}
+.weather-farecast-temperature-min {
+    opacity: 0.5;
 }
