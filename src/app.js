@@ -13,6 +13,24 @@ function formatDate(timestamp) {
     return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast () {
+   let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = "Forecast";
+    `<div class="row">
+            <div class="col-2">
+            <div class="weather-forecast-date">
+                Mon
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" width=60px>
+                <div class="weather-farecast-temp">
+                <span class= "weather-forecast-temp-max"> 22° </span>
+                <span class="weather-farecast-temperature-min"> 15° </span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>`
+}
 
 
 function displayTemperature (response) {
@@ -81,3 +99,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click",convertCelsiusTemp);
 
 search("Tokyo");
+displayForecast();
