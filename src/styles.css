@@ -24,6 +24,11 @@ margin: 30px auto;
     border: 1px solid #a6c1ee ;
 }
 
+#current-location-button {
+    background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    border: 1px solid #a6c1ee ;
+}
+
 #city {
     margin-top: 10px;
 }

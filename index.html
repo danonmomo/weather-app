@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://kit.fontawesome.com/0fa44ac669.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="src/styles.css"> 
 <title>Weather Forecast</title>
 </head>
@@ -18,12 +19,19 @@
 <div class="weather-app">
     <form id="search-form">
         <div class="row">
-    <div class=col-9>
+    <div class="col-8">
     <input type="search" class="form-control form-control-sm" placeholder="Search city" id="input-city" autocomplete="off" />
     </div>
-    <div class=col-3>
+    <div class="col-2">
     <input type="submit" value="search" class="btn btn-warning" id="search-button"/>
     </div>
+     <div class="col-2">
+               <button 
+               type="submit" 
+               class="btn btn-light"
+               id="current-location-button">
+               <i class="fas fa-map-marker-alt"></i>
+              </button>
     </div>
     </form>
 <h1 id="city"></h1>
@@ -36,8 +44,7 @@
 <strong id="main-temperature"></strong> 
 <span id="top-units"> <a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a></span>
 </span>
-
-        </div>
+    </div>
     </div>
      <div class="col-6">
     <ul id="top-main-right-col">
@@ -47,14 +54,13 @@
         <li> Wind: <span id="wind"> </span> km/h</li>
     </ul>
      </div>
-     </div>
     <div class="weather-forecast" id="forecast"></div>
     </div>
-    <small>
-         <a href="https://github.com/danonmomo/weather-app">Open-source code</a> , by Mari Okada
-     </small>
       </div>
     </div>
 <script src="src/app.js"></script>
+ <small>
+         <a href="https://github.com/danonmomo/weather-app">Open-source code</a> , by Mari Okada
+     </small>
 </body>
 </html>
