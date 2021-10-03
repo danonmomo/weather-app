@@ -93,11 +93,10 @@ function handleSubmit(event) {
 }
 
 // Current geo location
-
 function showPosition(position) {
 let apiKey = "26cc4e1e98bc3a9df038576aea64ceb0";
 let apiUrl =`https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(showCurrentWeatherCondition);
+axios.get(apiUrl).then(displayTemperature);
 }
 
 function getCurrentPosition(event) {
