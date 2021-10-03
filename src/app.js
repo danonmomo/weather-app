@@ -110,22 +110,11 @@ navigator.geolocation.getCurrentPosition(showPosition);
 let locationButton = document.querySelector("#current-location-button");
 locationButton.addEventListener("click", getCurrentPosition);
 
-
-function convertFahrenheitTemp(event) {
-    event.preventDefault();
-    fahrenheitTemperature = (celsiusTemperature* 9) / 5  + 32;
-    let tempElement= document.querySelector("#main-temperature");
-    tempElement.innerHTML = Math.round(fahrenheitTemperature);
-    celsiusLink.classList.remove("active");
-   fahrenheitLink.classList.add('active');
-}
-
 function convertCelsiusTemp(event) {
     event.preventDefault();
    let tempElement= document.querySelector("#main-temperature");
    tempElement.innerHTML = Math.round(celsiusTemperature);
    celsiusLink.classList.add("active");
-   fahrenheitLink.classList.remove('active');
 }
 
 let celsiusTemperature = null;
@@ -133,9 +122,6 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click",convertFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click",convertCelsiusTemp);

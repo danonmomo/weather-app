@@ -27,19 +27,28 @@ margin: 30px auto;
 #current-location-button {
     background: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
     border: 1px solid #a6c1ee ;
+
 }
 
 #city {
     margin-top: 10px;
+    margin-left: 15px;
 }
-.weather-temperature .active {
-    color: black;
 
+#date {
+    padding-left: 20px;
+}
+.clearfix-weather-temperature {
+    padding-left: 20px;
+}
+
+.clearfix-weather-temperature .active {
+    color: black;
     cursor: default;
     text-decoration: none;
 }
 
-.weather-temperature .active:hover {
+.clearfix-weather-temperature .active:hover {
     text-decoration: none;
 }
 
